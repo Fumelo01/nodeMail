@@ -1,17 +1,20 @@
 require ('dotenv').config()
-
+const log = console.log;
 const express = require('express')
 const nodemailer = require('nodemailer')
-const routes = require('./src/routes/routes')
+//const routes = require('./src/routes/routes')
 const app = express()
-app.use('/', routes)
+//app.use('/', routes)
+const { json } = require ('express')
+app.use(json());
+
 
 const PORT = process.env.PORT
 
 const host = process.env.HOST
-console.log(host)
 
-/*
+
+
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -26,20 +29,20 @@ let transporter = nodemailer.createTransport({
 
 let mailOptions = {
     from: process.env.MAIL_USERNAME,
-    to: '',
-    subject: 'Nodemailer Project',
-    text: 'eiwuew'
+    to: 'oluwafunmilayoa2@gmail.com,iyanu4real@gmail.com,oluwafunmilayoutme2020@gmail.com',
+    subject: 'Oluwafunmilayo\'s  Nodemailer Project',
+    text: 'Philippians 4:8  Finally, brethren, whatsoever things are true, whatsoever things are honest, whatsoever things are just, whatsoever things are pure, whatsoever things are lovely, whatsoever things are of good report; if there be any virtue, and if there be any praise, think on these things.'
 }
 
-transporter.sendMail(mailOptions, (err, info)=> {
+transporter.sendMail(mailOptions, (err, data)=> {
     if (err) {
-        console.log(err);
+        log(err);
     } else {
-        console.log('Email sent sucessfully. \nInfo: ' + info);
+        log({message: 'Email sent sucessfully, more info below'})
+        log(data)
     }
 });
-*/
-console.log(process.env.MAIL_USERNAME)
-app.listen(PORT, ()=>{
-    console.log(`The nodeMail Server is running at port ${PORT} \nhttp://${host}:${PORT}`)
-})
+
+//app.listen(PORT, ()=>{
+  //  console.log(`The nodeMail Server is running at port ${PORT} \nhttp://${host}:${PORT}`)
+//})
