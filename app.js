@@ -1,17 +1,17 @@
-require ('dotenv').config()
+require ('dotenv').config();
 const log = console.log;
-const express = require('express')
-const nodemailer = require('nodemailer')
-//const routes = require('./src/routes/routes')
-const app = express()
-//app.use('/', routes)
-const { json } = require ('express')
+const express = require('express');
+const nodemailer = require('nodemailer');
+//const routes = require('./src/routes/routes');
+const app = express();
+//app.use('/', routes);
+const { json } = require ('express');
 app.use(json());
 
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT;
 
-const host = process.env.HOST
+const host = process.env.HOST;
 
 
 
@@ -29,7 +29,7 @@ let transporter = nodemailer.createTransport({
 
 let mailOptions = {
     from: process.env.MAIL_USERNAME,
-    to: 'oluwafunmilayoa2@gmail.com,iyanu4real@gmail.com,oluwafunmilayoutme2020@gmail.com',
+    to: 'oluwafunmilayoa2@gmail.com,iyanu4real@gmail.com,oluwafunmilayoutme2020@gmail.com', //Change this or at least add your email address so you can confirm sent messages.
     subject: 'Oluwafunmilayo\'s  Nodemailer Project',
     text: 'Philippians 4:8  Finally, brethren, whatsoever things are true, whatsoever things are honest, whatsoever things are just, whatsoever things are pure, whatsoever things are lovely, whatsoever things are of good report; if there be any virtue, and if there be any praise, think on these things.'
 }
@@ -38,8 +38,8 @@ transporter.sendMail(mailOptions, (err, data)=> {
     if (err) {
         log(err);
     } else {
-        log({message: 'Email sent sucessfully, more info below'})
-        log(data)
+        log({message: 'Email sent sucessfully, more info below'});
+        log(data);
     }
 });
 
