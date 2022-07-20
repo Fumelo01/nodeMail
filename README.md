@@ -33,6 +33,9 @@
  > ##### Dependencies
   >> ###### *nodemailer*, *dotenv (If you are going to create a .env file)*
      
+ > ##### Authentication
+  >>###### The Authentication method I made use of here is `OAuth2`. If you don't know how to go about it, you should check this [article](https://www.freecodecamp.org/news/use-nodemailer-to-send-emails-from-your-node-js-server/).
+      
 ---
 > #### STEP 2 🪜
 > ##### Once the dependencies are installed, set the authentication details and save. 
